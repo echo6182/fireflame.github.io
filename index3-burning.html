@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            background-color: #000;
+        }
+
+        section {
+            display: flex;
+            /* justify-content: center; */
+        }
+
+        .burning {
+            width: 400px;
+            height: 400px;
+            background: url(image/burn-paper.gif) no-repeat;
+            background-size: contain;
+            position: absolute;
+            top: 34%;
+            left: 50%;
+            margin-left: -200px;
+
+        }
+
+        .floded {
+            width: 400px;
+            height: 400px;
+            background: url(image/folded-paper.gif) no-repeat;
+            background-size: contain;
+            position: absolute;
+            top: 26%;
+            left: 50%;
+            margin-left: -138px;
+            opacity: 1;
+
+        }
+
+       
+
+        
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="burning" ></div>
+        <div class="floded" ></div>
+    </section>
+
+    <!-- 音频 -->
+    <audio autoplay="autoplay" loop="loop">
+        <source src="fireflame sound.mp3">
+    </audio>
+
+
+    <script>
+        var flod = document.querySelector(".floded")
+        var burn = document.querySelector(".burning")
+        var timer = setInterval(() => {
+            // 控制淡入淡出
+            var current = flod.style.opacity;
+            var step = (1 * 100 - current) / 1.5; ///1是终点 由于起点扩大了100倍，终点也扩大100倍
+            //处理步长
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            current += step;
+            //判断终点
+            if (step > 0 && current >= 100) {
+                clearInterval(timer);
+                current = 100;
+            } else if (step < 0 && current <= 100) {
+                clearInterval(timer);
+                current = 100;
+            }
+            //设置
+            flod.style.opacity = current / 100;
+
+            
+        }, 1000);
+        setTimeout(() => {
+            flod.style.display = "none"
+            burn.style.display = "block"
+        }, 2000);
+
+
+        // 火把
+        burn.style.display = "none"
+
+        setTimeout(() => {
+            window.location.href="index1-fire.html"
+        }, 6000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            background-color: #000;
+            text-decoration: none;
+        }
+
+        section {
+            display: flex;
+        }
+
+        .start {
+            width: 108px;
+            height: 38px;
+            line-height: 38px;
+            background-color: #fff;
+            /* box-shadow: 5px 5px 5px 5px #ccc; */
+            border-radius: 10px;
+            color: #000;
+            /* padding-left: 7px; */
+            box-sizing: border-box;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            margin-left: -60px;
+            text-align: center;
+        }
+
+        .ff {
+            width: 400px;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            top: 34%;
+            margin-left: -200px;
+            background: url(image/33.png) no-repeat;
+            background-size: contain ;
+        }
+        .word{
+            width: 600px;
+            height: 600px;
+            background: url(image/word.png) no-repeat;
+            background-size: contain;
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            margin-left: -309px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <div class="word"></div>
+        <div class="ff"></div>
+        <a href="index2-article.html">
+            <div class="start">Write a letter</div>
+        </a>
+
+        <!-- 音频 -->
+    <audio autoplay="autoplay" loop="loop">
+      <source src="fireflame sound.mp3">
+      </audio>
+    </section>
+
+</body>
+
+</html>

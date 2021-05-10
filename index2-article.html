@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        body{
+            background-color: #000;
+            /* background-color: #ccc; */
+
+
+        }
+        .paper {
+            display: flex;
+            justify-content: center;
+            background: url(image/paper.JPG) no-repeat center center;
+            background-size: cover;
+        }
+
+        .paper-in {
+            /* padding-top: 5%; */
+            /* padding-left: 20%;
+            padding-right: 20%; */
+            box-sizing: border-box;
+            width: 100vw;
+            height: 100vh;
+            /* background-color: #000; */
+
+        }
+
+        textarea {
+            width: 100vw;
+            height: 90vh;
+            resize: none;
+        }
+
+        .input {
+            position: relative;
+
+        }
+
+        .word {
+            position: absolute;
+            line-height: 20px;
+            left: 0px;
+            top: 1px;
+            z-index: 10;
+            background: #fff
+        }
+
+        .input textarea {
+            padding: 20px;
+            box-sizing: border-box;
+            border: none;
+            /* text-indent: 75px; */
+            line-height: 20px;
+            resize: none;
+            font-size: 18px;
+            background: #ccc;
+            overflow: auto;
+            line-height: 20pt;
+            background: url(image/paper.JPG) no-repeat;
+            background-size: cover;
+        }
+        textarea{
+            text-decoration: underline;
+        }
+        button{
+            width: 100px;
+            height: 50px;
+            background-color: white;
+            border-radius: 10px;
+            position: absolute;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 音频 -->
+    <audio autoplay="autoplay" loop="loop"><source src="fireflame sound.mp3"></audio>
+
+    <div class="paper">
+        <div class="paper-in">
+            <div class="input">
+                <!-- <div class="word">护理措施:</div> -->
+                <textarea id="textarea"  autofocus class="input" rows="10" cols="100"></textarea>
+                <!-- <button>SEND</button> -->
+            </div>
+                <button id="btn">SEND</button>
+
+        </div>
+    </div>
+</body>
+
+<script>
+
+
+    btn.onclick = function(){
+
+        var text = document.getElementById("textarea").value
+        if(text ==''){
+            alert('Oops,nothing to say? ;-o  \n ')
+
+        }else{
+            window.location.href='index3-burning.html'
+        }
+
+    }
+
+</script>
+
+</html>
